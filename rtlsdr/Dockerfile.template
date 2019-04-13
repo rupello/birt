@@ -19,14 +19,13 @@ RUN git clone git://git.osmocom.org/rtl-sdr.git
 WORKDIR /usr/src/rtl-sdr
 RUN mkdir build
 WORKDIR /usr/src/rtl-sdr/build
-RUN cmake ../
+RUN cmake ../ -=ON
 RUN make
 RUN make install
 RUN ldconfig
 
 # Switch into our apps working directory
 WORKDIR /usr/src/
-
 # This will copy all files in our root to the working  directory in the container
 COPY . ./
 RUN pip3 install -r ./requirements.txt
