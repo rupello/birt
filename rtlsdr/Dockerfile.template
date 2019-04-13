@@ -19,7 +19,7 @@ RUN git clone git://git.osmocom.org/rtl-sdr.git
 WORKDIR /usr/src/rtl-sdr
 RUN mkdir build
 WORKDIR /usr/src/rtl-sdr/build
-RUN cmake ../ -=ON
+RUN cmake ../ -DDETACH_KERNEL_DRIVER=ON
 RUN make
 RUN make install
 RUN ldconfig
