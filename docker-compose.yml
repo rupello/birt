@@ -1,0 +1,34 @@
+version: '2'
+services:
+  #modemctl:
+  #  build: ./modemctl
+  #  privileged: true
+  #  restart: always
+  #  network_mode: host
+  #  environment:
+  #     - DBUS_SYSTEM_BUS_ADDRESS="unix:path=/host/run/dbus/system_bus_socket"
+  #  labels:
+  #    io.balena.features.dbus: '1'
+  #    io.balena.features.supervisor-api: '1'
+
+  #testtools:
+  #  build: ./testtools
+  #  privileged: true
+  #  restart: always
+  #  network_mode: host
+
+  #datadog:
+  #  build: ./datadog
+  #  privileged: true
+  #  restart: always
+  #  pid: "host"
+  #  network_mode: "host"
+  #  labels:
+  #    io.resin.features.dbus: '1'
+  #    io.resin.features.balena-socket: '1'
+
+  diag:
+    build: ./diag
+    privileged: true
+    restart: always
+    network_mode: host
