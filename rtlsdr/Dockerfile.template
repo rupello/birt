@@ -7,6 +7,9 @@ RUN apt-get -q update && apt-get install -yq --no-install-recommends \
     wget \
     git-core git cmake \
     libusb-1.0-0-dev \
+    python3 \
+    python3-setuptools \
+    python3-pip \
 	&& apt-get clean && rm -rf /var/lib/apt/lists/*
 
 
@@ -26,7 +29,7 @@ WORKDIR /usr/src/
 
 # This will copy all files in our root to the working  directory in the container
 COPY . ./
-
+RUN pip3 install -r /requirements.txt
 # main.py will run when container starts up on the device
 CMD ["python3","-u","src/main.py"]
 
