@@ -6,6 +6,8 @@ RUN apt-get -q update && apt-get install -yq --no-install-recommends \
     curl \
     wget \
     at \
+    screen \
+    vim \
     git-core git cmake \
     libusb-1.0-0-dev \
     python3 \
